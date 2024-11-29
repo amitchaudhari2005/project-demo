@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Game</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+     
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(135deg, #1e1e1e, #4e4e4e);
+   */
+  background-image: url("data:image/jpeg;base64,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");
+}
+
+.container {
+  text-align: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  cursor: pointer;
+  font-size: 5rem;
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.cell:active {
+  transform: scale(0.95);
+}
+
+#reset {
+  padding: 10px 40px;
+  background: #06d6a0;
+  font-size: larger;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  
+}
+
+#reset:hover {
+  background: #05c18a;
+
+}
+
+#message {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+     </style>
+</head>
+
+<body>
+    <!-- <marquee behavior="" direction="" class="a">Amit Chaudhari </marquee> -->
+    <div class="container">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <button id="reset">Reset Game</button>
+        <p id="message"></p>
+    </div>
+    <script >
+        const board = document.getElementById('board');
+const cells = document.querySelectorAll('.cell');
+const resetButton = document.getElementById('reset');
+const message = document.getElementById('message');
+
+let currentPlayer = 'X';
+let gameState = ['', '', '', '', '', '', '', '', ''];
+let gameActive = true;
+
+const winningConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+];
+
+const handleCellClick = (event) => {
+    const clickedCell = event.target;
+    const cellIndex = clickedCell.getAttribute('data-index');
+
+    if (gameState[cellIndex] !== '' || !gameActive) return;
+
+    gameState[cellIndex] = currentPlayer;
+    clickedCell.textContent = currentPlayer;
+
+    if (checkWinner()) {
+        message.textContent = `Player ${currentPlayer} Wins! 🎉`;
+        gameActive = false;
+    } else if (gameState.every(cell => cell !== '')) {
+        message.textContent = `It's a Draw! 😶`;
+        gameActive = false;
+    } else {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        message.textContent = `Player ${currentPlayer}'s Turn`;
+    }
+};
+
+const checkWinner = () => {
+    return winningConditions.some(combination => {
+        return combination.every(index => gameState[index] === currentPlayer);
+    });
+};
+
+const resetGame = () => {
+    gameState = ['', '', '', '', '', '', '', '', ''];
+    gameActive = true;
+    currentPlayer = 'X';
+    message.textContent = `Player X's Turn`;
+    cells.forEach(cell => cell.textContent = '');
+};
+
+cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+resetButton.addEventListener('click', resetGame);
+
+message.textContent = `Player X's Turn`;
+
+    </script>
+</body>
+
+</html>

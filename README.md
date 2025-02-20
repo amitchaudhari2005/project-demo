@@ -1,2 +1,2 @@
-# project-demo
+# GYM Project 
 This is my first repository

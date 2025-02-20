@@ -1,180 +1,654 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe Game</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
-     <style>
-     
-        * {
-  margin: 0;
-  padding: 0;
+
+<title>Gym Website Landing Page UI Design HTML CSS</title>
+
+
+
+
+<!-- partial:index.partial.html -->
+
+
+
+
+
+
+    <title>PGC-GYM Landing Page</title>
+    <!-- CSS -->
+
+        <link rel="stylesheet" href="style.css">
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&amp;display=swap");
+/* Base */
+:root {
+  --clr-primary: #29a396;
+}
+
+*,
+*::after,
+*::before {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background: linear-gradient(135deg, #1e1e1e, #4e4e4e);
-   */
-  background-image: url("data:image/jpeg;base64,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");
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(#111, #071a1a);
+  color: #fff;
+  overflow-x: hidden;
 }
 
 .container {
-  text-align: center;
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
-  width: 90%;
+  width: 80%;
+  margin: 0 auto;
 }
 
-h1 {
-  color: #fff;
-  margin-bottom: 20px;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-.board {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.cell {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+.flex {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100px;
+  justify-content: center;
+  column-gap: 60px;
+}
+
+.header,
+.section {
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.header::after,
+.header::before,
+.section::after,
+.section::before {
+  content: "";
+  background: url(https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/blur-1.png);
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+}
+
+.header::after {
+  left: -200px;
+}
+
+.header::before {
+  right: -200px;
+}
+
+.mb {
+  margin-bottom: 30px;
+}
+
+.mt {
+  margin-top: 20px;
+}
+
+.section {
+  background: #1d1f1e;
+  position: relative;
+  padding: 80px 0;
+}
+
+.section::after {
+  left: -200px;
+}
+
+.section::before {
+  width: 600px;
+  right: -200px;
+}
+
+.section:nth-child(even) {
+  background: #141615;
+}
+
+.section:nth-child(even)::after,
+.section:nth-child(even)::before {
+  display: none;
+}
+
+.primary {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.secondary {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.tertiary {
+  font-size: 15px;
+}
+/* End Base */
+
+/* Menu */
+.menu {
+  width: 100%;
+  background: linear-gradient(to right, #0e0e0e 70%, #142d2a);
+  padding: 12px 0;
+}
+
+.menu .container {
+  justify-content: space-between;
+}
+
+.mobile-btn {
+  display: none;
+}
+
+.logo {
   cursor: pointer;
-  font-size: 5rem;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+}
+
+.nav {
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.nav-item a {
+  text-decoration: none;
   color: #fff;
-  transition: background 0.3s, transform 0.2s;
 }
 
-.cell:hover {
-  background: rgba(255, 255, 255, 0.4);
+.nav-item:hover a {
+  color: #29a396;
+  transition: 0.3s linear;
 }
 
-.cell:active {
-  transform: scale(0.95);
+.nav-item:last-of-type {
+  margin-right: 0;
 }
+/* End Menu */
 
-#reset {
-  padding: 10px 40px;
-  background: #06d6a0;
-  font-size: larger;
+/* Buttons */
+.btn {
+  padding: 10px 28px;
+  background: var(--clr-primary);
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
   color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
-  
+  display: inline-block;
 }
 
-#reset:hover {
-  background: #05c18a;
-
+.btn:hover {
+  transition: 0.3s linear;
+  box-shadow: var(--clr-primary) 0px 5px 15px;
 }
 
-#message {
-  margin-top: 10px;
+.btn-2 {
+  font-size: 35px;
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s linear;
+}
+
+.btn-2:hover {
+  color: #29a396;
+}
+
+/* End Buttons */
+
+/* Header */
+.text {
+  width: 60%;
+}
+
+.visual {
+  width: 40%;
+}
+
+.visual img {
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.header h1 span {
+  color: var(--clr-primary);
+}
+/* End Header */
+
+.section:nth-child(even) .visual {
+  margin-right: 30px;
+}
+
+/* Trainer */
+#trainer {
+  text-align: center;
+}
+
+.trainer img {
+  border-top-left-radius: 80px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 80px;
+  border-bottom-left-radius: 20px;
+  margin-bottom: 10px;
+  outline: 2px solid #fff;
+  padding: 14px;
+}
+
+.trainer .mb {
+  margin-bottom: 10px;
+}
+/* End Trainer */
+
+/* Testimonial */
+#testimonial .visual img {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+}
+
+.client {
+  background: #fff;
+  color: #000;
+  padding: 20px 10px;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.client img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 40px);
+}
+
+.client h2 {
+  margin: 20px 0 10px 0;
+}
+/* End Testimonial */
+
+/* Discount */
+#discount {
+  padding: 40px 0;
+}
+/* End  Discount */
+
+/* Footer */
+.footer {
+  padding: 30px 0;
+  border-top: 1px solid #fff;
+  text-align: center;
+}
+/* End Footer */
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mobile-btn {
+    display: block;
+    font-size: 35px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+  }
+
+  .menu.active .nav-item {
+    display: block;
+    margin: 30px 0;
+  }
+
+  .nav,
+  .menu .btn {
+    display: none;
+  }
+
+  .menu.active .nav,
+  .menu.active .btn {
+    display: block;
+  }
+
+  .menu.active {
+    padding: 30px 0;
+    width: 100%;
+    transition: all 0.8s ease;
+  }
+
+  .text,
+  .visual {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text h1 {
+    font-size: 45px;
+  }
+
+  .primary {
+    font-size: 28px;
+  }
+
+  .secondary {
+    font-size: 22px;
+  }
+
+  .tertiary {
+    font-size: 14px;
+  }
+
+  .trainer {
+    margin-bottom: 20px;
+  }
+
+  .client {
+    margin-bottom: 50px;
+  }
+
+  #discount .visual img {
+    width: 70%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 530px) {
+  .header::after,
+  .header::before,
+  .section::after,
+  .section::before {
+    display: none;
+  }
+
+  .primary {
+    font-size: 25px;
+  }
+
+  .secondary {
+    font-size: 20px;
+  }
+
+  .tertiary {
+    font-size: 12px;
+  }
+
+  .text h1 {
+    font-size: 34px;
+  }
+
+  .btn,
+  .btn-2 {
+    font-size: 16px;
+  }
+}
+
+/* End Responsive */
+
+
+
+.youtube {
+  position: fixed;
+  bottom: 40px;
+  right: 70px;
+  text-decoration: none;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 6px;
+  box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
   color: #fff;
-  font-size: 1.2rem;
 }
 
-     </style>
-</head>
+.youtube p {
+  font-size: 22px;
+}
+        </style>
 
-<body>
-    <!-- <marquee behavior="" direction="" class="a">Amit Chaudhari </marquee> -->
-    <div class="container">
-        <h1>Tic-Tac-Toe</h1>
-        <div class="board" id="board">
-            <div class="cell" data-index="0"></div>
-            <div class="cell" data-index="1"></div>
-            <div class="cell" data-index="2"></div>
-            <div class="cell" data-index="3"></div>
-            <div class="cell" data-index="4"></div>
-            <div class="cell" data-index="5"></div>
-            <div class="cell" data-index="6"></div>
-            <div class="cell" data-index="7"></div>
-            <div class="cell" data-index="8"></div>
+    <!-- Menu -->
+    <div class="menu">
+      <div class="container flex">
+        <!-- Mobile Button -->
+        <div class="mobile-btn">
+
         </div>
-        <button id="reset">Reset Game</button>
-        <p id="message"></p>
+        <div class="logo">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/logo.png" alt="" />
+        </div>
+
+        <ul class="nav">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#why-us">Features</a></li>
+          <li class="nav-item"><a href="#explore">Explore</a></li>
+          <li class="nav-item"><a href="#discount">Register</a></li>
+        </ul>
+
+        <a href="#" class="btn">Register</a>
+      </div>
     </div>
-    <script >
-        const board = document.getElementById('board');
-const cells = document.querySelectorAll('.cell');
-const resetButton = document.getElementById('reset');
-const message = document.getElementById('message');
+    <!-- End Menu -->
 
-let currentPlayer = 'X';
-let gameState = ['', '', '', '', '', '', '', '', ''];
-let gameActive = true;
+    <!-- Header -->
+    <header class="header">
+      <div class="container flex">
+        <div class="text">
+          <h1 class="mb">
+            Complete Daily <br />
+            <span>Workout</span> At Home
+          </h1>
 
-const winningConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-];
+          <p class="mb">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima
+            sunt sed tempora neque molestiae corrupti nobis harum ullam eos nam!
+          </p>
 
-const handleCellClick = (event) => {
-    const clickedCell = event.target;
-    const cellIndex = clickedCell.getAttribute('data-index');
+          <a href="#" class="btn mt">Get Started Now</a>
+        </div>
 
-    if (gameState[cellIndex] !== '' || !gameActive) return;
+        <div class="visual">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png" alt="" />
+        </div>
+      </div>
+    </header>
+    <!-- End Header -->
 
-    gameState[cellIndex] = currentPlayer;
-    clickedCell.textContent = currentPlayer;
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+      <div class="container flex">
+        <div class="text">
+          <h2 class="primary mb">Why Choose Us?</h2>
+          <h3 class="secondary mb">Consulatation with Expert.</h3>
+          <p class="tertiary">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
+            maxime tempore?
+          </p>
 
-    if (checkWinner()) {
-        message.textContent = Player ${currentPlayer} Wins! 🎉;
-        gameActive = false;
-    } else if (gameState.every(cell => cell !== '')) {
-        message.textContent = It's a Draw! 😶;
-        gameActive = false;
-    } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        message.textContent = Player ${currentPlayer}'s Turn;
-    }
-};
+          <h3 class="secondary mb">Consulatation with Expert.</h3>
+          <p class="tertiary">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
+            maxime tempore?
+          </p>
+        </div>
+        <div class="visual">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- End Why Us -->
 
-const checkWinner = () => {
-    return winningConditions.some(combination => {
-        return combination.every(index => gameState[index] === currentPlayer);
-    });
-};
+    <!-- Explore -->
+    <div class="section" id="explore">
+      <div class="container flex">
+        <div class="visual">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/explore.jpg" alt="" />
+        </div>
+        <div class="text">
+          <h2 class="primary mb">
+            Explore Our Fitness <br />
+            Studio
+          </h2>
+          <p class="tertiary mb">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+            esse vitae ratione quos maiores eveniet temporibus illum! Eligendi
+            amet officia unde sint totam ut optio. Molestiae, illo quia?
+          </p>
 
-const resetGame = () => {
-    gameState = ['', '', '', '', '', '', '', '', ''];
-    gameActive = true;
-    currentPlayer = 'X';
-    message.textContent = Player X's Turn;
-    cells.forEach(cell => cell.textContent = '');
-};
+          <a href="#" class="btn mt">Get Started Now</a>
+        </div>
+      </div>
+    </div>
+    <!-- End Explore -->
 
-cells.forEach(cell => cell.addEventListener('click', handleCellClick));
-resetButton.addEventListener('click', resetGame);
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+      <h2 class="primary mb">Our Professional Trainers</h2>
+      <div class="container flex">
+        <div class="trainer">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer1.jpg" alt="" />
+          <h3 class="secondary mb">Alan Smith</h3>
+          <p class="tertiary mb">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+          </p>
 
-message.textContent = Player X's Turn;
+          <a href="#" class="btn-2">
 
-    </script>
-</body>
+          </a>
+        </div>
 
-</html>
+        <div class="trainer">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer2.jpg" alt="" />
+          <h3 class="secondary mb">Alan Smith</h3>
+          <p class="tertiary mb">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+          </p>
+
+          <a href="#" class="btn-2">
+
+          </a>
+        </div>
+
+        <div class="trainer">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer3.jpg" alt="" />
+          <h3 class="secondary mb">Alan Smith</h3>
+          <p class="tertiary mb">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+          </p>
+
+          <a href="#" class="btn-2">
+
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End Trainer -->
+
+    <!-- Testimonial -->
+    <div class="section" id="testimonial">
+      <div class="container flex">
+        <div class="text">
+          <h2 class="primary">
+            That's What Our Super <br />
+            Client Says
+          </h2>
+
+          <br />
+          <br />
+          <br />
+
+          <div class="client">
+            <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/client1.jpg" alt="" />
+            <h2 class="secondary">Exelent Training</h2>
+            <p class="tertiary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+              quas voluptatem ad, repudiandae voluptates odio deleniti
+              reiciendis in veniam quidem expedita maxime error fugit. Pariatur
+              quasi sunt aut id. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Neque, officiis.
+            </p>
+          </div>
+        </div>
+        <div class="visual">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- End Testimonial -->
+
+    <!-- Discount -->
+    <div class="section" id="discount">
+      <div class="container flex">
+        <div class="visual">
+          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/discount.png" alt="" />
+        </div>
+        <div class="text">
+          <h2 class="primary mb">
+            Fitness Classes This Summer, Pay Now And Get 25% Discount
+          </h2>
+
+          <p class="tertiary mb">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maxime
+            minus praesentium est et veniam voluptate alias excepturi minima
+            placeat amet nostrum, eligendi, quod cum ducimus nesciunt ipsa eum,
+            explicabo eaque obcaecati.
+          </p>
+
+          <a href="#" class="btn bt">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <!-- End Discount -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container flex">
+        <p class="tertiary">
+          &copy; 2025 Developer Amit Chaudhari. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+       <!--   BTN   -->
+
+
+    <!-- End Footer -->
+
+    <!-- Ion Icons Js -->
+
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+
+
+<!-- partial -->
+ <script>
+    //Js
+document.querySelector(".mobile-btn").addEventListener("click", function () {
+  document.querySelector(".menu").classList.toggle("active");
+});
+ </script>

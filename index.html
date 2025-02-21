@@ -1,654 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<title>Gym Website Landing Page UI Design HTML CSS</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Porfolio</title>
+    <link rel="stylesheet" href="Style.css">
 
+    <!-- box icons -->
 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
 
-
-<!-- partial:index.partial.html -->
-
-
-
-
-
-
-    <title>PGC-GYM Landing Page</title>
-    <!-- CSS -->
-
-        <link rel="stylesheet" href="style.css">
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&amp;display=swap");
-/* Base */
-:root {
-  --clr-primary: #29a396;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Nunito", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  width: 100%;
-  min-height: 100vh;
-  background: radial-gradient(#111, #071a1a);
-  color: #fff;
-  overflow-x: hidden;
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 60px;
-}
-
-.header,
-.section {
-  width: 100%;
-  padding: 40px 0;
-  overflow: hidden;
-}
-
-.header::after,
-.header::before,
-.section::after,
-.section::before {
-  content: "";
-  background: url(https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/blur-1.png);
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: 0;
-}
-
-.header::after {
-  left: -200px;
-}
-
-.header::before {
-  right: -200px;
-}
-
-.mb {
-  margin-bottom: 30px;
-}
-
-.mt {
-  margin-top: 20px;
-}
-
-.section {
-  background: #1d1f1e;
-  position: relative;
-  padding: 80px 0;
-}
-
-.section::after {
-  left: -200px;
-}
-
-.section::before {
-  width: 600px;
-  right: -200px;
-}
-
-.section:nth-child(even) {
-  background: #141615;
-}
-
-.section:nth-child(even)::after,
-.section:nth-child(even)::before {
-  display: none;
-}
-
-.primary {
-  font-size: 35px;
-  font-weight: 700;
-}
-
-.secondary {
-  font-size: 25px;
-  font-weight: 700;
-}
-
-.tertiary {
-  font-size: 15px;
-}
-/* End Base */
-
-/* Menu */
-.menu {
-  width: 100%;
-  background: linear-gradient(to right, #0e0e0e 70%, #142d2a);
-  padding: 12px 0;
-}
-
-.menu .container {
-  justify-content: space-between;
-}
-
-.mobile-btn {
-  display: none;
-}
-
-.logo {
-  cursor: pointer;
-}
-
-.logo img {
-  width: 80px;
-  height: auto;
-}
-
-.nav {
-  list-style: none;
-}
-
-.nav-item {
-  display: inline-block;
-  margin-right: 30px;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.nav-item a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.nav-item:hover a {
-  color: #29a396;
-  transition: 0.3s linear;
-}
-
-.nav-item:last-of-type {
-  margin-right: 0;
-}
-/* End Menu */
-
-/* Buttons */
-.btn {
-  padding: 10px 28px;
-  background: var(--clr-primary);
-  border-radius: 40px;
-  font-size: 20px;
-  font-weight: 400;
-  text-decoration: none;
-  color: #fff;
-  display: inline-block;
-}
-
-.btn:hover {
-  transition: 0.3s linear;
-  box-shadow: var(--clr-primary) 0px 5px 15px;
-}
-
-.btn-2 {
-  font-size: 35px;
-  text-decoration: none;
-  color: #ccc;
-  transition: 0.3s linear;
-}
-
-.btn-2:hover {
-  color: #29a396;
-}
-
-/* End Buttons */
-
-/* Header */
-.text {
-  width: 60%;
-}
-
-.visual {
-  width: 40%;
-}
-
-.visual img {
-  width: 100%;
-}
-
-.header h1 {
-  font-size: 70px;
-  font-weight: 700;
-}
-
-.header h1 span {
-  color: var(--clr-primary);
-}
-/* End Header */
-
-.section:nth-child(even) .visual {
-  margin-right: 30px;
-}
-
-/* Trainer */
-#trainer {
-  text-align: center;
-}
-
-.trainer img {
-  border-top-left-radius: 80px;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 80px;
-  border-bottom-left-radius: 20px;
-  margin-bottom: 10px;
-  outline: 2px solid #fff;
-  padding: 14px;
-}
-
-.trainer .mb {
-  margin-bottom: 10px;
-}
-/* End Trainer */
-
-/* Testimonial */
-#testimonial .visual img {
-  width: 90%;
-  display: block;
-  margin-left: auto;
-}
-
-.client {
-  background: #fff;
-  color: #000;
-  padding: 20px 10px;
-  margin-right: 20px;
-  text-align: center;
-  border-radius: 20px;
-  position: relative;
-  margin-top: 20px;
-}
-
-.client img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  position: absolute;
-  top: -40px;
-  left: calc(50% - 40px);
-}
-
-.client h2 {
-  margin: 20px 0 10px 0;
-}
-/* End Testimonial */
-
-/* Discount */
-#discount {
-  padding: 40px 0;
-}
-/* End  Discount */
-
-/* Footer */
-.footer {
-  padding: 30px 0;
-  border-top: 1px solid #fff;
-  text-align: center;
-}
-/* End Footer */
-
-/* Responsive */
-
-@media (max-width: 768px) {
-  .flex {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .mobile-btn {
-    display: block;
-    font-size: 35px;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 12px;
-  }
-
-  .menu.active .nav-item {
-    display: block;
-    margin: 30px 0;
-  }
-
-  .nav,
-  .menu .btn {
-    display: none;
-  }
-
-  .menu.active .nav,
-  .menu.active .btn {
-    display: block;
-  }
-
-  .menu.active {
-    padding: 30px 0;
-    width: 100%;
-    transition: all 0.8s ease;
-  }
-
-  .text,
-  .visual {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .text h1 {
-    font-size: 45px;
-  }
-
-  .primary {
-    font-size: 28px;
-  }
-
-  .secondary {
-    font-size: 22px;
-  }
-
-  .tertiary {
-    font-size: 14px;
-  }
-
-  .trainer {
-    margin-bottom: 20px;
-  }
-
-  .client {
-    margin-bottom: 50px;
-  }
-
-  #discount .visual img {
-    width: 70%;
-    margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 530px) {
-  .header::after,
-  .header::before,
-  .section::after,
-  .section::before {
-    display: none;
-  }
-
-  .primary {
-    font-size: 25px;
-  }
-
-  .secondary {
-    font-size: 20px;
-  }
-
-  .tertiary {
-    font-size: 12px;
-  }
-
-  .text h1 {
-    font-size: 34px;
-  }
-
-  .btn,
-  .btn-2 {
-    font-size: 16px;
-  }
-}
-
-/* End Responsive */
-
-
-
-.youtube {
-  position: fixed;
-  bottom: 40px;
-  right: 70px;
-  text-decoration: none;
-  padding: 8px 12px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 6px;
-  box-shadow: 0 2px 2px 3px rgba(0, 0, 0, 0.2);
-  color: #fff;
-}
-
-.youtube p {
-  font-size: 22px;
-}
-        </style>
-
-    <!-- Menu -->
-    <div class="menu">
-      <div class="container flex">
-        <!-- Mobile Button -->
-        <div class="mobile-btn">
-
-        </div>
-        <div class="logo">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/logo.png" alt="" />
-        </div>
-
-        <ul class="nav">
-          <li class="nav-item"><a href="#">Home</a></li>
-          <li class="nav-item"><a href="#why-us">Features</a></li>
-          <li class="nav-item"><a href="#explore">Explore</a></li>
-          <li class="nav-item"><a href="#discount">Register</a></li>
-        </ul>
-
-        <a href="#" class="btn">Register</a>
-      </div>
-    </div>
-    <!-- End Menu -->
-
-    <!-- Header -->
+<body>
     <header class="header">
-      <div class="container flex">
-        <div class="text">
-          <h1 class="mb">
-            Complete Daily <br />
-            <span>Workout</span> At Home
-          </h1>
+        <a href="#" class="logo">StudyBuddy | LearningHub.<span class="animate" style="--i:1"></span></a>
 
-          <p class="mb">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima
-            sunt sed tempora neque molestiae corrupti nobis harum ullam eos nam!
-          </p>
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2"></span> </div>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
 
-          <a href="#" class="btn mt">Get Started Now</a>
-        </div>
-
-        <div class="visual">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/banner-img.png" alt="" />
-        </div>
-      </div>
+            <div class="active-nav"></div>
+            <span class="animate" style="--i:2"></span>
+        </nav>
     </header>
-    <!-- End Header -->
 
-    <!-- Why Us -->
-    <div class="section" id="why-us">
-      <div class="container flex">
-        <div class="text">
-          <h2 class="primary mb">Why Choose Us?</h2>
-          <h3 class="secondary mb">Consulatation with Expert.</h3>
-          <p class="tertiary">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
-            maxime tempore?
-          </p>
-
-          <h3 class="secondary mb">Consulatation with Expert.</h3>
-          <p class="tertiary">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
-            maxime tempore?
-          </p>
-        </div>
-        <div class="visual">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/why-us.png" alt="" />
-        </div>
-      </div>
-    </div>
-    <!-- End Why Us -->
-
-    <!-- Explore -->
-    <div class="section" id="explore">
-      <div class="container flex">
-        <div class="visual">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/explore.jpg" alt="" />
-        </div>
-        <div class="text">
-          <h2 class="primary mb">
-            Explore Our Fitness <br />
-            Studio
-          </h2>
-          <p class="tertiary mb">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            esse vitae ratione quos maiores eveniet temporibus illum! Eligendi
-            amet officia unde sint totam ut optio. Molestiae, illo quia?
-          </p>
-
-          <a href="#" class="btn mt">Get Started Now</a>
-        </div>
-      </div>
-    </div>
-    <!-- End Explore -->
-
-    <!-- Trainer -->
-    <div class="section" id="trainer">
-      <h2 class="primary mb">Our Professional Trainers</h2>
-      <div class="container flex">
-        <div class="trainer">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer1.jpg" alt="" />
-          <h3 class="secondary mb">Alan Smith</h3>
-          <p class="tertiary mb">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
-          </p>
-
-          <a href="#" class="btn-2">
-
-          </a>
-        </div>
-
-        <div class="trainer">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer2.jpg" alt="" />
-          <h3 class="secondary mb">Alan Smith</h3>
-          <p class="tertiary mb">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
-          </p>
-
-          <a href="#" class="btn-2">
-
-          </a>
-        </div>
-
-        <div class="trainer">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/trainer3.jpg" alt="" />
-          <h3 class="secondary mb">Alan Smith</h3>
-          <p class="tertiary mb">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
-          </p>
-
-          <a href="#" class="btn-2">
-
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- End Trainer -->
-
-    <!-- Testimonial -->
-    <div class="section" id="testimonial">
-      <div class="container flex">
-        <div class="text">
-          <h2 class="primary">
-            That's What Our Super <br />
-            Client Says
-          </h2>
-
-          <br />
-          <br />
-          <br />
-
-          <div class="client">
-            <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/client1.jpg" alt="" />
-            <h2 class="secondary">Exelent Training</h2>
-            <p class="tertiary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              quas voluptatem ad, repudiandae voluptates odio deleniti
-              reiciendis in veniam quidem expedita maxime error fugit. Pariatur
-              quasi sunt aut id. Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Neque, officiis.
+    <!-- home section design -->
+    <section class="home show-animate" id="home">
+        <div class="home-content">
+            <h1> Hi, I'm <span>Amit Chaudhari  <span class="animate" style="--i:2"></span></span></h1>
+            <div class="text-animate">
+                <h3>WEB DEVELOPER</h3>
+                <span class="animate" style="--i:3"></span>
+            </div>
+            <p>
+                Welcome to my Portfolio. I'm Amit Chaudhari ,Fresher undergraduate student from the department of computer engineering.
+                My Professional journey has  allowed me to develop a keep understanding of web development & UI/UX.
             </p>
-          </div>
-        </div>
-        <div class="visual">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/testimonial.png" alt="" />
-        </div>
-      </div>
-    </div>
-    <!-- End Testimonial -->
 
-    <!-- Discount -->
-    <div class="section" id="discount">
-      <div class="container flex">
-        <div class="visual">
-          <img decoding="async" src="https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/discount.png" alt="" />
+            <div class="btn-box">
+                <a href="https://drive.google.com/file/d/1sXiAgmxulAavY7qmOf-6h0ZGGXKzLRwO/view?usp=sharing" class="btn">Download CV</a>
+                <a href="htpps://www.linkedin.com/in/amit-chaudhari-ba1199287" class="btn">Let's Talk</a>
+            </div>
+
         </div>
-        <div class="text">
-          <h2 class="primary mb">
-            Fitness Classes This Summer, Pay Now And Get 25% Discount
-          </h2>
 
-          <p class="tertiary mb">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maxime
-            minus praesentium est et veniam voluptate alias excepturi minima
-            placeat amet nostrum, eligendi, quod cum ducimus nesciunt ipsa eum,
-            explicabo eaque obcaecati.
-          </p>
-
-          <a href="#" class="btn bt">Book Now</a>
+        <div class="home-sci">
+            <a href="https://github.com/amitchaudhari2005"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/amit-chaudhari-ba1199287"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.instagram.com/amit_2005___/"><i class='bx bxl-instagram'></i></a>
         </div>
-      </div>
-    </div>
-    <!-- End Discount -->
+        <div class="home-imgHover"></div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container flex">
-        <p class="tertiary">
-          &copy; 2025 Developer Amit Chaudhari. All rights reserved.
-        </p>
-      </div>
+    <!-- about section design  -->
+
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        <div class="about-img">
+            <img src="profile.jpg" alt="profile" style="background-color:  #081b29;">
+            <span class="circle-spin"></span>
+        </div>
+
+        <div class="about-content">
+            <h3>Web Developer </h3>
+            <p>I'm Amit Chaudhari  ,Fresher undergraduate student from the department of computer science and engineering.</p>
+            <div class="btn-box btns">
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- education section design  -->
+
+    <section class="education" id="education">
+        <h2 class="heading">My <span>Journey</span></h2>
+
+        <div class="education-row">
+            <div class="education-column">
+                <h3 class="title">Education</h3>
+
+                <div class="education-box">
+                    <!-- #1edu  -->
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2022-2026</div>
+                            <h3>Bachelor of Technology-RGPV University</h3>
+                            <p>Shri Ram Group of Institution
+                                Jabalpur Madhya Predesh India
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- #2edu  -->
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2021-2022</div>
+                            <h3>Madhya Pradesh Board of Higher Secondry Education</h3>
+                            <p>Government Higher Secondary School Chinsura Madhya Pradesh</p>
+                        </div>
+                    </div>
+                     <!-- #3edu  -->
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2019-2020</div>
+                            <h3>Madhya Pradesh Board of Secondry Education</h3>
+                            <p>Government Higher Secondary School Chinsura Madhya Pradesh</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- #Project -->
+
+            <div class="education-column">
+                <h3 class="title">Project</h3>
+
+                <div class="education-box">
+                    <!-- #1edu  -->
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> FEB-2025</div>
+                            <h3><a href="index.html">Personal Porfolio</a></h3>
+                            <p>Using Tech stack HTML5 ,CSS3 and Javascript</p>
+                            <p>Using Tool VS code</p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- #2edu  -->
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>Nov-2024</div>
+                            <h3><a href="restorant.html"> Restorant Website</a> </h3>
+                            <p>Using Tech Stack HTML5, CSS and Javascript</p>
+                            <p>Using Tool VS code</p>
+                        </div>
+                    </div>
+                      <!-- #3edu  -->
+
+                      <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>Nov-2024</div>
+                            <h3>  <a href="Gym.html">Gym Website for Workout </a></h3>
+                            <p>Using Tech Stack HTML5, CSS and Javascript</p>
+                            <p>Using Tool VS code</p>
+                        </div>
+                    </div>
+                    
+
+
+                      <!-- #4edu  -->
+
+                      <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>Nov-2024</div>
+                            <h3><a href="Snake.html">Snake Game</a></h3>
+                            <p>Using Tech Stack HTML5, CSS and Javascript</p>
+                            <p>Using Tool VS code</p>
+                        </div>
+                    </div>
+                      <!-- #5edu  -->
+
+                      <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i>Nov-2024</div>
+                            <h3 > <a href="Tic_Tac_Toe.html">Tic Tac Toe Game </a></h3>
+                            <p>Using Tech Stack HTML5, CSS and Javascript</p>
+                            <p>Using Tool VS code</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- skill section design  -->
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
+        <div class="skills-row">
+            <div class="skills-column">
+                <h3 class="title">Coding Skills</h3>
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>HTML <span>90%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>CSS <span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Javascript <span>70%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>C/C++ <span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>SQL <span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="skills-column">
+                <h3 class="title">Professional Skills</h3>
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>Graphic Design <span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3> Leadership <span>85%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Public Speaking <span>65%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Multi-tasking <span>65%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact  section design -->
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="text" placeholder="Full Name" required>
+                    <span class="focus"></span>
+                </div>
+
+                <div class="input-field">
+                    <input type="email" placeholder="Email Address" required>
+                    <span class="focus"></span>
+                </div>
+            </div>
+
+
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="number" placeholder="Mobile Number" required>
+                    <span class="focus"></span>
+                </div>
+
+                <div class="input-field">
+                    <input type="text" placeholder="Email Subject" required>
+                    <span class="focus"></span>
+                </div>
+            </div>
+
+            <div class="textarea-field">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <span class="focus"></span>
+            </div>
+
+            <div class="btn-box btns">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- footer design section  -->
+
+    <footer class="footer">  
+        <div class="footer-text">
+            <p>Copyright &copy; 2025 by Amit Chaudhari  | All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
     </footer>
-
-       <!--   BTN   -->
-
-
-    <!-- End Footer -->
-
-    <!-- Ion Icons Js -->
-
-
-    <!-- JS -->
+    
     <script src="script.js"></script>
-
-
-
-<!-- partial -->
- <script>
-    //Js
-document.querySelector(".mobile-btn").addEventListener("click", function () {
-  document.querySelector(".menu").classList.toggle("active");
-});
- </script>
+</body>
+</html>
